@@ -33,7 +33,7 @@ class LoginController extends Controller
 
         $input['status'] = 'active';
 
-        if (Auth::attempt($input)) {
+        if (Auth::attempt($input, $request->boolean('remember'))) {
             $request->session()->regenerate();
 
             return redirect()->intended();
