@@ -32,6 +32,6 @@ class Index extends Component
 
         return view('livewire.home.index', [
             'products' => $products,
-        ]);
+        ])->extends('layouts.app');
     }
 }
