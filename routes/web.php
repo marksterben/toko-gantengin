@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Livewire\Home\Detail;
 use App\Http\Livewire\Home\Index;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,5 @@ Route::get('/logout', [LoginController::class, 'destroy'])->middleware('auth')->
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
 
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
+
+Route::get('/detail/{product}', Detail::class)->name('detail');
