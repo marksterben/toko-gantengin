@@ -9,10 +9,7 @@
                     <img src="@empty($product->image) https://via.placeholder.com/300 @else {{ $product->image }} @endempty"
                         class="card-img-top" alt="error!" style="height: 300px" />
                     <div class="card-body">
-                        <a href="{{ route('detail', ['product' => $product->id]) }}"
-                            class="card-title h5 text-decoration-none stretched-link">
-                            {{ $product->name }}
-                        </a>
+                        <a href="#" class="card-title h5 text-decoration-none stretched-link">{{ $product->name }}</a>
                         <p class="card-text">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
                     </div>
                 </div>
