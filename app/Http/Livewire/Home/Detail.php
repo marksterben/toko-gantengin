@@ -7,7 +7,12 @@ use Livewire\Component;
 
 class Detail extends Component
 {
-    public Product $product;
+    public $product;
+
+    public function mount(Product $product)
+    {
+        $this->product = $product;
+    }
 
     public function render()
     {
