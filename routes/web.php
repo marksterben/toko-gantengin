@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Livewire\Home\Detail;
-use App\Http\Livewire\Home\Index;
+use App\Http\Livewire\Home;
+use App\Http\Livewire\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,16 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Index::class);
+Route::get('/', Home\Index::class);
+Route::get('/detail/{product}', Home\Detail::class)->name('detail');
 
-Route::get('/login', [LoginController::class, 'create'])->middleware('guest')->name('login');
+Route::get('/product', Product\Index::class)->name('product');
 
-Route::post('/login', [LoginController::class, 'authenticate'])->middleware('guest');
-
-Route::get('/logout', [LoginController::class, 'destroy'])->middleware('auth')->name('logout');
-
-Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
-
-Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
-
-Route::get('/detail/{product}', Detail::class)->name('detail');
+require __DIR__ . '/auth.php';

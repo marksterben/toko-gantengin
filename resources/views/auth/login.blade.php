@@ -29,7 +29,7 @@
                                 <label class="form-check-label" for="remember">Remember me</label>
                             </div>
                             <div class="d-flex justify-content-end">
-                                <button class="btn btn-dark">Login</button>
+                                <button type="submit" class="btn btn-dark">Login</button>
                             </div>
                         </form>
                     </div>

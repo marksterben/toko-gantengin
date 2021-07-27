@@ -6,7 +6,7 @@
         @foreach ($products as $product)
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                 <div class="card">
-                    <img src="@empty($product->image) https://via.placeholder.com/300 @else {{ $product->image }} @endempty"
+                    <img src="@empty($product->image) https://via.placeholder.com/300 @else {{ asset("storage/$product->image") }} @endempty"
                         class="card-img-top" alt="error!" style="height: 300px" />
                     <div class="card-body">
                         <a href="{{ route('detail', ['product' => $product->id]) }}"
