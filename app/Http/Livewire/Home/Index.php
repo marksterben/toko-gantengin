@@ -26,8 +26,10 @@ class Index extends Component
     public function render()
     {
         $products = Product::where('status', 'available')
-            ->where('name', 'like', "%$this->search%")
-            ->orWhere('description', 'like', "%$this->search%")
+            ->where(function ($query) {
+                $query->where('name', 'like', "%$this->search%")
+                    ->orWhere('description', 'like', "%$this->search%");
+            })
             ->paginate(8);
 
         return view('livewire.home.index', [
