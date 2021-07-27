@@ -41,7 +41,7 @@
                                 <label for="password">Password Confirmation</label>
                             </div>
                             <div class="d-flex justify-content-end">
-                                <button class="btn btn-dark">Submit</button>
+                                <button type="submit" class="btn btn-dark">Submit</button>
                             </div>
                         </form>
                     </div>
