@@ -1,6 +1,10 @@
 <div class="container py-3">
     @if ($formVisible)
-        @livewire('product.create')
+        @if ($updateProduct)
+            @livewire('product.update', ['product' => $productToUpdate])
+        @else
+            @livewire('product.create')
+        @endif
     @endif
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -65,7 +69,7 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <span class="btn btn-sm">
+                                            <span wire:click="openUpdateForm({{ $product->id }})" class="btn btn-sm">
                                                 <i class="fas fa-edit text-info"></i>
                                             </span>
                                             <span class="btn btn-sm">
