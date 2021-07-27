@@ -19,7 +19,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Pengguna</a></li>
-                                <li><a class="dropdown-item" href="#">Produk</a></li>
+                                <li><a class="dropdown-item" href="{{ route('product') }}">Produk</a></li>
                                 <li><a class="dropdown-item" href="#">Order</a></li>
                             </ul>
                         </li>

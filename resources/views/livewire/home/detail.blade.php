@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-6">
             <img class="mb-5 mb-md-0" style="width: 100%"
-                src="@empty($product->image) https://via.placeholder.com/300 @else {{ $product->image }} @endempty"
+                src="@empty($product->image) https://via.placeholder.com/300 @else {{ asset("storage/$product->image") }} @endempty"
                 alt="..." />
         </div>
         <div class="col-md-6">
