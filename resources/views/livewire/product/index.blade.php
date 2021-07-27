@@ -72,7 +72,7 @@
                                             <span wire:click="openUpdateForm({{ $product->id }})" class="btn btn-sm">
                                                 <i class="fas fa-edit text-info"></i>
                                             </span>
-                                            <span class="btn btn-sm">
+                                            <span wire:click="deleteProduct({{ $product->id }})" class="btn btn-sm">
                                                 <i class="fas fa-trash text-danger"></i>
                                             </span>
                                         </td>
