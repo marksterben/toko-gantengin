@@ -18,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', Home\Index::class);
 Route::get('/detail/{product}', Home\Detail::class)->name('detail');
 
-Route::get('/product', Product\Index::class)->name('product');
+Route::get('/product', Product\Index::class)->middleware(['auth', 'admin'])->name('product');
 
 require __DIR__ . '/auth.php';
