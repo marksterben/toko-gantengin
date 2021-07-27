@@ -47,7 +47,12 @@ class Create extends Component
             $input['image'] = $this->image->store('images/product', 'public');
         }
 
-        $this->emit('flashMessage', Product::create($input));
+        $params = [
+            'data' => Product::create($input),
+            'message' => 'ditambah'
+        ];
+
+        $this->emit('flashMessage', $params);
         $this->emit('closeForm');
     }
 }

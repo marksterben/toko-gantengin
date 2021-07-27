@@ -16,6 +16,7 @@ class Index extends Component
     public $paginate = '5';
     public $formVisible = false;
     public $updateProduct = false;
+    public $productToUpdate;
 
     protected $queryString = [
         'search' => ['except' => ''],
@@ -42,18 +43,25 @@ class Index extends Component
         $this->formVisible = true;
     }
 
+    public function openUpdateForm(Product $product)
+    {
+        $this->productToUpdate = $product;
+        $this->formVisible = true;
+        $this->updateProduct = true;
+    }
+
     public function closeFormHandler()
     {
         $this->formVisible = false;
         $this->updateProduct = false;
     }
 
-    public function flashMessageHandler($param)
+    public function flashMessageHandler($params)
     {
-        if ($param) {
-            session()->flash('success', 'Product berhasil di tambah');
+        if ($params['data']) {
+            session()->flash('success', 'Product berhasil ' . $params['message']);
         } else {
-            session()->flash('failed', 'Product gagal di tambah');
+            session()->flash('failed', 'Product gagal ' . $params['message']);
         }
     }
 }
