@@ -8,13 +8,18 @@ use Livewire\Component;
 class Navbar extends Component
 {
     public $count = 0;
+    public $user;
 
-    protected $listeners = ['countingCart' => 'countingCartHandler'];
+    protected $listeners = [
+        'countingCart' => 'countingCartHandler',
+        'updateUser' => 'updateUserHandler',
+    ];
 
     public function mount()
     {
         if (Auth::check()) {
             $this->count = Auth::user()->carts()->count();
+            $this->user = Auth::user();
         }
     }
 
@@ -26,5 +31,10 @@ class Navbar extends Component
     public function countingCartHandler()
     {
         $this->count = Auth::user()->carts()->count();
+    }
+
+    public function updateUserHandler()
+    {
+        $this->user = Auth::user();
     }
 }
