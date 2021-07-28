@@ -20,7 +20,7 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{{ route('user') }}">Pengguna</a></li>
                                 <li><a class="dropdown-item" href="{{ route('product') }}">Produk</a></li>
-                                <li><a class="dropdown-item" href="#">Order</a></li>
+                                <li><a class="dropdown-item" href="#">Pesanan</a></li>
                             </ul>
                         </li>
                     @endif
@@ -39,7 +39,7 @@
                             {{ Auth::user()->name }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Profil Saya</a></li>
+                            <li><a class="dropdown-item" href="{{ route('profile') }}">Profil Saya</a></li>
                             <li><a class="dropdown-item" href="#">Pesanan Saya</a></li>
                             <li>
                                 <hr class="dropdown-divider" />

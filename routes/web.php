@@ -3,6 +3,7 @@
 use App\Http\Livewire\Home;
 use App\Http\Livewire\User;
 use App\Http\Livewire\Product;
+use App\Http\Livewire\Profile;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,5 +22,7 @@ Route::get('/detail/{product}', Home\Detail::class)->name('detail');
 
 Route::get('/user', User\Index::class)->middleware(['auth', 'admin'])->name('user');
 Route::get('/product', Product\Index::class)->middleware(['auth', 'admin'])->name('product');
+
+Route::get('/profile', Profile\Index::class)->middleware('auth')->name('profile');
 
 require __DIR__ . '/auth.php';
