@@ -30,7 +30,7 @@
                 @auth
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <i class="fas fa-shopping-cart"></i> Keranjang (0)
+                            <i class="fas fa-shopping-cart"></i> Keranjang ({{ $count }})
                         </a>
                     </li>
                     <li class="nav-item dropdown">
