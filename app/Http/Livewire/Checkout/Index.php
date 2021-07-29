@@ -8,12 +8,12 @@ use Livewire\Component;
 class Index extends Component
 {
     public $carts;
-    public $name;
+    public $recipient;
     public $address;
     public $phone;
 
     protected $rules = [
-        'name' => 'required|string',
+        'recipient' => 'required|string',
         'address' => 'required|string',
         'phone' => 'required|numeric',
     ];

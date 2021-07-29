@@ -6,22 +6,25 @@
                  <div class="card-body">
                      <form>
                          <div class="mb-3">
-                             <label for="name" class="form-label">Nama</label>
-                             <input wire:model="name" type="text" class="form-control" id="name"
+                             <label for="recipient" class="form-label">Nama</label>
+                             <input wire:model="recipient" type="text" class="form-control" id="recipient"
                                  placeholder="Masukkan nama penerima" />
+                             @error('recipient') <span class="small text-danger">{{ $message }}</span> @enderror
                          </div>
                          <div class="mb-3">
                              <label for="address" class="form-label">Alamat</label>
                              <textarea wire:model="address" id="address" cols="30" rows="5"
                                  class="form-control"></textarea>
+                             @error('address') <span class="small text-danger">{{ $message }}</span> @enderror
                          </div>
                          <div class="mb-3">
                              <label for="phone" class="form-label">Telepon</label>
                              <input wire:model="phone" type="text" class="form-control" id="phone"
                                  placeholder="Masukkan nomor telepon penerima" value="" />
+                             @error('phone') <span class="small text-danger">{{ $message }}</span> @enderror
                          </div>
                          <div>
-                             <button class="btn btn-primary">Simpan</button>
+                             <button type="submit" class="btn btn-primary">Simpan</button>
                          </div>
                      </form>
                  </div>
