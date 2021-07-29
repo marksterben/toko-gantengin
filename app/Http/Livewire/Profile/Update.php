@@ -53,5 +53,6 @@ class Update extends Component
 
         $this->emit('flashMessage', $this->user->save());
         $this->emit('closeForm');
+        $this->emit('updateUser');
     }
 }

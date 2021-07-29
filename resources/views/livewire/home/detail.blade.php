@@ -9,9 +9,9 @@
             <h1 class="display-5 fw-bolder">{{ $product->name }}</h1>
             <p class="fs-5 mb-5">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
             <p class="lead">{{ $product->description }}</p>
-            <form class="d-flex">
-                <input class="form-control text-center me-3 w-25" id="inputQuantity" type="number" value="1" />
-                <button class="btn btn-outline-dark">Masukkan Keranjang</button>
+            <form class="d-flex" wire:submit.prevent="addCart">
+                <input wire:model="qty" class="form-control text-center me-3 w-25" type="number" min="1" />
+                <button type="submit" class="btn btn-outline-dark">Masukkan Keranjang</button>
             </form>
         </div>
     </div>

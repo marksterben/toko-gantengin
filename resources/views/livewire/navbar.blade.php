@@ -11,7 +11,7 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 @auth
-                    @if (Auth::user()->role === 'admin')
+                    @if ($user->role === 'admin')
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -29,14 +29,14 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-shopping-cart"></i> Keranjang (0)
+                        <a class="nav-link" href="{{ route('cart') }}">
+                            <i class="fas fa-shopping-cart"></i> Keranjang ({{ $count }})
                         </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ Auth::user()->name }}
+                            {{ $user->name }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('profile') }}">Profil Saya</a></li>
