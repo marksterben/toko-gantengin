@@ -33,7 +33,7 @@
                         <a href="/" class="btn btn-warning text-white">
                             <i class="fas fa-angle-left"></i> Kembali Belanja
                         </a>
-                        <a href="#" class="btn btn-success ms-auto">
+                        <a href="{{ route('checkout') }}" class="btn btn-success ms-auto">
                             Pembayaran <i class="fas fa-angle-right"></i>
                         </a>
                     </div>

@@ -5,6 +5,7 @@ use App\Http\Livewire\User;
 use App\Http\Livewire\Product;
 use App\Http\Livewire\Profile;
 use App\Http\Livewire\Cart;
+use App\Http\Livewire\Checkout;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,5 +26,6 @@ Route::get('/user', User\Index::class)->middleware(['auth', 'admin'])->name('use
 Route::get('/product', Product\Index::class)->middleware(['auth', 'admin'])->name('product');
 Route::get('/profile', Profile\Index::class)->middleware('auth')->name('profile');
 Route::get('/cart', Cart\Index::class)->middleware('auth')->name('cart');
+Route::get('/checkout', Checkout\Index::class)->middleware('auth')->name('checkout');
 
 require __DIR__ . '/auth.php';
