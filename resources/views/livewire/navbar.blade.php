@@ -29,7 +29,7 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ route('cart') }}">
                             <i class="fas fa-shopping-cart"></i> Keranjang ({{ $count }})
                         </a>
                     </li>
