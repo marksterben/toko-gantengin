@@ -28,5 +28,6 @@ Route::get('/profile', Profile\Index::class)->middleware('auth')->name('profile'
 Route::get('/cart', Cart\Index::class)->middleware('auth')->name('cart');
 Route::get('/checkout', Checkout\Index::class)->middleware('auth')->name('checkout');
 Route::get('/myorder', Profile\MyOrder::class)->middleware('auth')->name('myorder');
+Route::get('/myorder/{order}', Profile\MyOrderDetail::class)->middleware('auth')->name('myorder.show');
 
 require __DIR__ . '/auth.php';
