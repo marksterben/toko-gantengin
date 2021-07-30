@@ -23,4 +23,15 @@ class Order extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * Get the oder's created at.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getCreatedAtAttribute($value)
+    {
+        return date('d-m-Y', strtotime($value));
+    }
 }
