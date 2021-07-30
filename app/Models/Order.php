@@ -25,6 +25,14 @@ class Order extends Model
     }
 
     /**
+     * Get the details for the order.
+     */
+    public function details()
+    {
+        return $this->hasMany(OrderDetail::class);
+    }
+
+    /**
      * Get the oder's created at.
      *
      * @param  string  $value
