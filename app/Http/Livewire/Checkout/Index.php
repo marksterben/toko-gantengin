@@ -36,7 +36,7 @@ class Index extends Component
         $this->validate();
 
         $order = Order::create([
-            'invoice' => Str::random(4) . date('dmy'),
+            'invoice' => Str::upper(Str::random(4)) . date('dmy'),
             'user_id' => Auth::id(),
             'total' => $this->carts->sum('subtotal'),
             'recipient' => $this->recipient,
