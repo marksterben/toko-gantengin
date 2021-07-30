@@ -23,7 +23,6 @@ class CreateOrderDetailsTable extends Migration
                 ->onDelete('cascade');
             $table->integer('qty');
             $table->integer('subtotal');
-            $table->timestamps();
         });
     }
 
