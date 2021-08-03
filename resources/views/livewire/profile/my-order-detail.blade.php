@@ -65,7 +65,7 @@
                 </div>
                 @if ($order->status == 'waiting')
                     <div class="card-footer">
-                        <button type="button" class="btn btn-success">Konfirmasi Pembayaran</button>
+                        <button type="button" class="btn btn-success">Pembayaran</button>
                     </div>
                 @endif
             </div>
