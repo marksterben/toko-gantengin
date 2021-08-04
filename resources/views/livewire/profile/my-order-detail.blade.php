@@ -30,7 +30,15 @@
                 <div class="card-header">
                     Detail Pesanan #{{ $order->invoice }}
                     <div class="float-right">
-                        {{ $order->status }}
+                        @if ($order->status == 'finished')
+                            <span class="badge rounded-pill bg-success">Pesanan Diterima</span>
+                        @elseif($order->status == 'waiting')
+                            <span class="badge rounded-pill bg-secondary">Menunggu Pembayaran</span>
+                        @elseif($order->status == 'paid')
+                            <span class="badge rounded-pill bg-warning">Pesanan Diproses</span>
+                        @elseif($order->status == 'canceled')
+                            <span class="badge rounded-pill bg-danger">Pesanan Dibatalkan</span>
+                        @endif
                     </div>
                 </div>
                 <div class="card-body">
@@ -72,6 +80,10 @@
                 @if ($order->status == 'waiting')
                     <div class="card-footer">
                         <button wire:click="pay" type="button" class="btn btn-success">Pembayaran</button>
+                    </div>
+                @elseif($order->status == 'paid')
+                    <div class="card-footer">
+                        <button wire:click="confirm" type="button" class="btn btn-success">Pesanan Diterima</button>
                     </div>
                 @endif
             </div>

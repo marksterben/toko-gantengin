@@ -26,4 +26,10 @@ class MyOrderDetail extends Component
     {
         $this->emit('payment', $this->order->token);
     }
+
+    public function confirm()
+    {
+        $this->order->status = 'finished';
+        $this->order->save();
+    }
 }

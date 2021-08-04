@@ -44,7 +44,18 @@
                                             </td>
                                             <td>{{ $order->created_at }}</td>
                                             <td>{{ $order->total }}</td>
-                                            <td>{{ $order->status }}</td>
+                                            <td>
+                                                @if ($order->status == 'finished')
+                                                    <span class="badge rounded-pill bg-success">Pesanan Diterima</span>
+                                                @elseif($order->status == 'waiting')
+                                                    <span class="badge rounded-pill bg-secondary">Menunggu
+                                                        Pembayaran</span>
+                                                @elseif($order->status == 'paid')
+                                                    <span class="badge rounded-pill bg-warning">Pesanan Diproses</span>
+                                                @elseif($order->status == 'canceled')
+                                                    <span class="badge rounded-pill bg-danger">Pesanan Dibatalkan</span>
+                                                @endif
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
