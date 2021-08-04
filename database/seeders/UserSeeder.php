@@ -14,6 +14,13 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->create();
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@ganteng.com',
+            'email_verified_at' => now(),
+            'password' => 'admin123',
+            'role' => 'admin',
+            'status' => 'active',
+        ]);
     }
 }
