@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MidtransController;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\User;
 use App\Http\Livewire\Product;
@@ -29,5 +30,7 @@ Route::get('/cart', Cart\Index::class)->middleware('auth')->name('cart');
 Route::get('/checkout', Checkout\Index::class)->middleware('auth')->name('checkout');
 Route::get('/myorder', Profile\MyOrder::class)->middleware('auth')->name('myorder');
 Route::get('/myorder/{order}', Profile\MyOrderDetail::class)->middleware('auth')->name('myorder.show');
+
+Route::post('/midtrans/notifications', [MidtransController::class, 'notificationsHandler']);
 
 require __DIR__ . '/auth.php';
