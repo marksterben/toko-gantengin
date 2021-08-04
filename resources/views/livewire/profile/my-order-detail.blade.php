@@ -1,3 +1,9 @@
+@once
+    @push('midtrans')
+        <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}">
+        </script>
+    @endpush
+@endonce
 <div class="container">
     <div class="row mt-3">
         <div class="col-3">
@@ -65,10 +71,27 @@
                 </div>
                 @if ($order->status == 'waiting')
                     <div class="card-footer">
-                        <button type="button" class="btn btn-success">Pembayaran</button>
+                        <button wire:click="pay" type="button" class="btn btn-success">Pembayaran</button>
                     </div>
                 @endif
             </div>
         </div>
     </div>
 </div>
+@push('script-payment')
+    <script>
+        Livewire.on('payment', snapToken => {
+            window.snap.pay(snapToken, {
+                onSuccess: function(result) {
+                    location.reload();
+                },
+                onPending: function(result) {
+                    location.reload();
+                },
+                onError: function(result) {
+                    location.reload();
+                },
+            })
+        });
+    </script>
+@endpush

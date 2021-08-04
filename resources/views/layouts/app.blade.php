@@ -16,6 +16,8 @@
 
     <title>Toko Gantengin</title>
 
+    @stack('midtrans')
+
     @livewireStyles
 </head>
 
@@ -33,6 +35,8 @@
     </script>
 
     @livewireScripts
+
+    @stack('script-payment')
 </body>
 
 </html>

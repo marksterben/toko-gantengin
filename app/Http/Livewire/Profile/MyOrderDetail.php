@@ -21,4 +21,9 @@ class MyOrderDetail extends Component
     {
         return view('livewire.profile.my-order-detail')->extends('layouts.app');
     }
+
+    public function pay()
+    {
+        $this->emit('payment', $this->order->token);
+    }
 }

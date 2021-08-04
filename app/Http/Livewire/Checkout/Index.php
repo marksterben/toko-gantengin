@@ -57,6 +57,26 @@ class Index extends Component
                 $cart->delete();
             }
 
+            \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
+            \Midtrans\Config::$isProduction = false;
+            \Midtrans\Config::$isSanitized = true;
+            \Midtrans\Config::$is3ds = true;
+
+            $params = [
+                'transaction_details' => [
+                    'order_id' => $order->invoice,
+                    'gross_amount' => $order->total,
+                ],
+                'customer_details' => [
+                    'first_name' => $order->recipient,
+                    'email' => $order->user->email,
+                    'phone' => $order->phone,
+                ],
+            ];
+
+            $order->token = \Midtrans\Snap::getSnapToken($params);
+            $order->save();
+
             return redirect('/');
         }
     }
