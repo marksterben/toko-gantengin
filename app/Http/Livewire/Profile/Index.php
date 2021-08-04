@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class Index extends Component
 {
-    public User $user;
+    public $user;
     public $edit = false;
 
     protected $listeners = [

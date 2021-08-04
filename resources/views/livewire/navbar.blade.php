@@ -40,7 +40,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('profile') }}">Profil Saya</a></li>
-                            <li><a class="dropdown-item" href="#">Pesanan Saya</a></li>
+                            <li><a class="dropdown-item" href="{{ route('myorder') }}">Pesanan Saya</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>

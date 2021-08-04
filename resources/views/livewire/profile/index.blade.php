@@ -12,7 +12,7 @@
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="#" class="text-decoration-none">
+                        <a href="{{ route('myorder') }}" class="text-decoration-none">
                             Pesanan Saya
                         </a>
                     </li>
