@@ -24,6 +24,7 @@ class CreateOrdersTable extends Migration
             $table->text('address');
             $table->string('phone');
             $table->enum('status', ['waiting', 'paid', 'finished', 'canceled']);
+            $table->string('token')->nullable();
             $table->timestamps();
         });
     }
